@@ -376,19 +376,43 @@ nav .left a span{
     nav{
         padding: 0 20px;
     }
+    nav .right{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-     nav .right a {
-        font-size: 22px;
-     }
+    nav .right a.button{
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        gap: 0;
+        justify-content: center;
+        border-radius: 12px;
+        background: #ffffff;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: var(--shadow-soft);
+    }
 
-    nav .right a:last-child {
-        color: var(--text-color); 
-        background-color: transparent;
-        padding: 0;
-     }
+    nav .right a.button i{
+        font-size: 18px;
+        line-height: 1;
+    }
 
     nav .right a span {
         display: none;
+    }
+
+    nav .right .button-ghost,
+    nav .right .button-primary{
+        color: var(--text-color);
+        background: #ffffff;
+        border: 1px solid rgba(0,0,0,0.08);
+        box-shadow: var(--shadow-soft);
+    }
+    nav .right .button-ghost:hover,
+    nav .right .button-primary:hover{
+        background: rgba(255,255,255,0.9);
     }
     /* SECTION 1: hero*/
     .hero-section {
