@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Project Details</title>
+</head>
+<body class="project-page">
+  <nav class="project-nav">
+    <div class="left"><a href="/">Michael Grassi</a></div>
+    <div class="right">
+      <a class="button button-ghost" href="index.html#skills"><i class="fa-solid fa-arrow-left"></i><span>Back</span></a>
+    </div>
+  </nav>
+
+  <main class="project-layout">
+    <header class="project-header">
+      <p class="eyebrow">Language</p>
+      <h1 id="lang-title">Projects</h1>
+      <p id="lang-summary" class="project-summary">Exploring the stack with multiple builds.</p>
+    </header>
+
+    <section id="project-list" class="project-list">
+      <!-- JS injects project cards here -->
+    </section>
+  </main>
+
+  <script>
+    const data = {
+      html: {
+        title: "HTML",
+        summary: "Clean, semantic layouts with fast loads and accessible structure.",
+        projects: [
+          {
+            name: "Portfolio Landing",
+            desc: "Single-page marketing site with responsive hero, CTA buttons, and smooth anchor navigation.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          },
+          {
+            name: "Docs Template",
+            desc: "Minimal docs skeleton with side nav, breadcrumb, and code-friendly typography.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          }
+        ]
+      },
+      css: {
+        title: "CSS",
+        summary: "Reusable component styles, gradients, and motion for polished UI.",
+        projects: [
+          {
+            name: "Mini Design System",
+            desc: "Token-based buttons, cards, and form controls with hover/active states and responsive spacing.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          },
+          {
+            name: "Dashboard Theme",
+            desc: "Grid/Flex dashboard layout with cards, charts area, and dark/light theme toggle.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          }
+        ]
+      },
+      java: {
+        title: "Java",
+        summary: "APIs and services with strong typing, testing, and logging.",
+        projects: [
+          {
+            name: "Task API",
+            desc: "Spring Boot REST API with JWT auth, layered architecture, and integration tests.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          },
+          {
+            name: "Telemetry Ingest",
+            desc: "Service that parses telemetry payloads, validates schema, and stores to Postgres.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          }
+        ]
+      },
+      python: {
+        title: "Python",
+        summary: "Automation, scripting, and lightweight services.",
+        projects: [
+          {
+            name: "Password Security Analyzer",
+            desc: "GUI tool for analyzing password strength and patterns.",
+            github: "https://github.com/MichaelGrassi/password-security-analyzer"
+          },
+          {
+            name: "Data Prep Toolkit",
+            desc: "Utilities for CSV/JSON cleaning, schema validation, and quick visual summaries.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          }
+        ]
+      },
+      cpp: {
+        title: "C++",
+        summary: "Performance-minded systems code with modern C++ patterns.",
+        projects: [
+          {
+            name: "Threaded Queue",
+            desc: "Lock-free queue experiment comparing throughput vs. mutex-based designs.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          },
+          {
+            name: "Renderer Toy",
+            desc: "Tiny renderer exploring RAII, smart pointers, and move semantics for resource safety.",
+            github: "https://github.com/MichaelGrassi?tab=projects"
+          }
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const langKey = params.get('lang') || 'html';
+    const lang = data[langKey] || data.html;
+
+    document.getElementById('lang-title').textContent = `${lang.title} Projects`;
+    document.getElementById('lang-summary').textContent = lang.summary;
+
+    const list = document.getElementById('project-list');
+    list.innerHTML = '';
+
+    lang.projects.forEach((p) => {
+      const card = document.createElement('article');
+      card.className = 'project-card-item';
+      card.innerHTML = `
+        <div class="project-card-top">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+        </div>
+        <div class="project-card-actions">
+          <a class="button button-primary" href="${p.github}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i><span>View on GitHub</span>
+          </a>
+        </div>
+      `;
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>

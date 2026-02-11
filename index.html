@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" 
+referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="styles.css">
+
+    <title>Portfolio</title>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="left">
+            <a href="/">Michael Grassi</a>
+        </div>
+        <div class="right">
+            <a class="button button-ghost" href="https://github.com/MichaelGrassi?tab=projects" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <span>Github</span>
+            </a>   
+
+            <a class="button button-ghost" href="https://www.linkedin.com/in/michael-grassi-5b6151396?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+            </a> 
+
+            <a class="button button-primary" href="mailto:michaeljgrassi@icloud.com" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+            </a> 
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+    <!-- Section 1: Hero -->
+     <section class="hero-section">
+        <div class="text">
+            <h2>Hi, I'm Michael👋</h2>
+            <p>I’m a Computer Science professional in the Boston, MA 
+                area. I have experiance building software and securing systems. 
+                I bring a strong foundation in computer science with a focused path toward cybersecurity. I develop applications,
+                practice red and blue team operations, and work across the stack. 
+                I will begin my Bachelor’s in Computer Science in Fall 2026.</p>
+
+            <div class="mission">
+                <h3>My mission</h3>   
+                <p>Build secure, scalable software and advance cybersecurity practices across the industry. Technology should make the world safer, not more vulnerable...</p>
+            </div>
+        <div class="links">
+            <a class="button button-outline" href="#skills">
+                <i class="fa-solid fa-code"></i>
+            <span>Skills</span>
+                </a>
+
+            <a class="button button-primary" href="#contact">
+                <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="headshot">
+        <img src="images/hero-headshot.webp" alt="Headshot of Michael Grassi">
+        </div>
+     </section>
+
+     <!-- Section 2: Skilled -->
+     <section id ="skills" class="skills-section">
+     <h2>Projects</h2>
+     <div class ="text" >
+        Here below are some of the programming languages and tools
+        I have experience with. Click on any one of them to see projects where I've applied it.
+     </div>
+
+     <div class="cells">    
+        <a class="cell card-link" href="project.html?lang=html">
+            <img src="images/html-logo.webp" alt="HTML Icon">
+            <span>HTML</span>
+        </a>
+        
+        <a class="cell card-link" href="project.html?lang=css">
+            <img src="images/css-logo.webp" alt="CSS Icon">
+            <span>CSS</span>
+        </a>
+        
+        <a class="cell card-link" href="project.html?lang=java">
+            <img src="images/java-logo.webp" alt="Java Icon">
+            <span>Java</span>
+        </a>
+
+        <a class="cell card-link" href="project.html?lang=python">
+            <img src="images/python-logo.webp" alt="Python Icon">
+            <span>Python</span>
+        </a>
+
+        <a class="cell card-link" href="project.html?lang=cpp">
+            <img src="images/c++-logo.webp" alt="C++ Icon">
+            <span>C++</span>
+        </a>
+     </div>
+    </section>
+
+     <!-- Section 4: Contact -->
+     <section id="contact" class="contact-section">   
+<h2>Contact Me</h2>
+
+<div class="group">     
+    <div class="text">
+        Want to talk security, software, 
+        or collaborate on a project? I'm 
+        lways looking to connect with people 
+        working on interesting problems.  
+         Open to internships, collaborations, and 
+         good conversations. 
+    </div>
+
+    <form class="form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+         <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" cols="30" rows="10"></textarea>
+
+            <button class="button button-primary" type="submit">Send Message</button>
+    </form>
+    </div>
+     </section>
+    </main>
+</body>
+</html>
